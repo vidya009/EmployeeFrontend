@@ -1,0 +1,98 @@
+<div class="card my-5">
+    <div class="card-body">
+        
+      <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+
+         <!-- Name -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="employee.name" 
+            class="form-control" 
+            id="name" 
+            name="name" 
+            placeholder="Enter your name"
+            required #name="ngModel">
+        </div>
+        <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+
+         <!-- Birthdate -->
+        <div class="form-group">
+          <label for="birthdate">Birthdate</label>
+          <input type="date" [(ngModel)]="employee.birthdate" 
+            class="form-control" 
+            id="birthdate" 
+            name="birthdate" 
+            placeholder="Enter your birthdate )"
+            required #birthdate="ngModel">
+          <div [hidden]="!birthdate.pristine" class="alert alert-danger">birthdate is required</div>
+        </div>
+
+         <!-- Gender -->
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <input type="text" [(ngModel)]="employee.gender" 
+            class="form-control" 
+            id="gender" 
+            name="gender" 
+            placeholder="Enter your Gender (Male/ Female/ Other)"
+            required #gender="ngModel">
+        </div>
+        <div [hidden]="!gender.pristine" class="alert alert-danger">gender is required</div>
+
+         <!-- Mobile number -->
+        <div class="form-group">
+          <label for="mobile">Mobile No.</label>
+          <input type="text" [(ngModel)]="employee.mobile" 
+            class="form-control" 
+            id="mobile" 
+            name="mobile" 
+            placeholder="Enter your mobile number"
+            required #mobile="ngModel">
+        </div>
+        <div [hidden]="!mobile.pristine" class="alert alert-danger">Mobile number is required</div>
+
+         <!-- Address -->
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" [(ngModel)]="employee.address" 
+            class="form-control" 
+            id="address" 
+            name="address" 
+            placeholder="Enter your address"
+            required #address="ngModel">
+        </div>
+        <div [hidden]="!address.pristine" class="alert alert-danger">Address is required</div>
+
+       <!-- Salary -->
+       <div class="form-group">
+        <label for="Salary">Salary</label>
+        <input type="text" [(ngModel)]="employee.salary" 
+          class="form-control" 
+          id="salary" 
+          name="salary" 
+          placeholder="Enter your salary"
+          required #salary="ngModel">
+      </div>
+      <div [hidden]="!salary.pristine" class="alert alert-danger">Salary is required</div>
+
+
+      <!-- Deptartment ID -->
+      <div class="form-group">
+        <label for="dept_id">Department ID</label>
+        <select name = "departments" class = "form-control" id = "departments" [(ngModel)]="employee.department">
+          <option *ngFor = "let dept of departments" [value] = "dept">{{dept.deptName}}</option>
+        </select>
+      </div>
+  
+
+
+
+
+        <button type="submit" [disabled]="!employeeForm.form.valid" 
+          class="btn btn-info">Submit</button>
+
+          
+          
+      </form>
+    </div>
+  </div>

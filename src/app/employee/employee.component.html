@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Birthdate</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Address</th>
+          <th scope="col">Salary</th>
+         <!-- <th scope="col">Department ID</th>-->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.birthdate }}</td>
+          <td>{{ employee.gender }}</td>
+          <td>{{ employee.mobile }}</td>
+          <td>{{ employee.address }}</td>
+          <td>{{ employee.salary }}</td>
+          <!--<td>{{ employee.dept_id.id }}</td>-->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
